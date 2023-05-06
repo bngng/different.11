@@ -1,4 +1,4 @@
-// let pause = true;
+let pause = true;
 
 let dis  = 12;
 let reScale = 3;
@@ -107,9 +107,9 @@ function setup() {
   direction = random(-0.1, 0.1);
   // print(direction)
 
-  // if (pause == true) {
-  //   noLoop();
-  // }
+  if (pause == true) {
+    noLoop();
+  }
 }
 
 function draw() {
@@ -169,6 +169,15 @@ function draw() {
   textAlign(RIGHT);
   textFont("Noto Sans Mono");
   text("< next >", 0, 0);
+  pop();
+  
+  push();
+  translate(width/2, height / 6);
+  fill(225, 65);
+  textSize(18);
+  textAlign(CENTER);
+  textFont("Noto Sans Mono");
+  text('< click anywhere to play / pause >', 0,0)
   pop();
 }
 
@@ -363,15 +372,6 @@ function drawPattern(dis) {
 //   }
 // }
 
-// function mousePressed() {
-//   if (pause == false) {
-//     noLoop();
-//     pause = true;
-//   } else {
-//     loop();
-//     pause = false;
-//   }
-// }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
@@ -399,5 +399,12 @@ function mousePressed() {
   if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < width / 15) {
     location.reload();
     location.href = "https://samesame.netlify.app";
+  }
+  if (pause == false) {
+    noLoop();
+    pause = true;
+  } else {
+    loop();
+    pause = false;
   }
 }
