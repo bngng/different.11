@@ -182,7 +182,7 @@ function draw() {
   
   push();
   translate(width/2, height / 6);
-  fill(225, 65);
+  fill(225);
   textSize(18);
   textAlign(CENTER);
   textFont(myFont2);
@@ -352,7 +352,7 @@ function drawPattern(dis) {
       // pattern.ellipseMode(CORNER);
       pattern.rect(200 + spaceBio, leadingW, wordW / 0.7, 13);
 
-      pattern.fill(250, map(mouseY, 0, pattern.height, 100, 200));
+      pattern.fill(250, map(mouseY, 0, pattern.height, 100, 125));
       pattern.textFont(myFont[j + count]);
       pattern.textSize(15);
       pattern.text(bioDis2[j][i], bioX[i] + spaceBio + moveX, bioH[j + count]);
