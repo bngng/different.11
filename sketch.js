@@ -27,6 +27,9 @@ let direction;
 
 let myFont = [];
 let myFont2;
+let myFont3;
+let myFont4;
+let myFontMix;
 
 let tilesXbg = 5;
 let tilesYbg = 8;
@@ -67,6 +70,9 @@ function preload() {
 
   myFont = ["Noto Sans", "Noto Serif", "Noto Sans Mono"];
   myFont2 = loadFont('NotoSansMono-ExtraBold.ttf')
+  myFont3 = loadFont('NotoSansMono-Medium.ttf')
+  myFont4 = loadFont('NotoSerif-Italic.ttf')
+  myFontMix = [myFont3, myFont4]
 }
 
 function setup() {
@@ -82,6 +88,7 @@ function setup() {
 
   for (let i = 0; i < 1800; i++) {
     myFont[i] = random(myFont);
+    myFontMix[i] = random(myFontMix);
     colorSet[i] = random(80, 200);
     luck[i] = round(random(-1, 1));
     luck2[i] = round(random(-1, 1));
@@ -287,7 +294,7 @@ function drawPattern(dis) {
       textDis.noStroke();
       textDis.fill(pixelColorImg[i]);
       textDis.textSize(60);
-      textDis.textFont(myFont[i]);
+      textDis.textFont(myFontMix[i]);
       textDis.textAlign(LEFT, BOTTOM);
       textDis.text(nameDis[i], space, leading);
       space += 85;
