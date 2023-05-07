@@ -271,7 +271,7 @@ function drawPattern(dis) {
   let leading = 55;
 
   for (let i = 0; i < nameDis.length; i++) {
-    if (frameCount < 20) {
+    if (frameCount < 5) {
       let wordW = textWidth(nameDis[i]);
       textDis.noStroke();
       textDis.noFill();
